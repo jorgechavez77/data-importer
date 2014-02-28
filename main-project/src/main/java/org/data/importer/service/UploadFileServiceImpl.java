@@ -18,7 +18,7 @@ public class UploadFileServiceImpl implements UploadFileService {
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED)
-	public void upload(InputStream input) {
+	public int upload(InputStream input) {
 		DataImportService service = new DataImportService();
 		List<FabricacionExcel> excelList = service.map(input);
 
@@ -28,6 +28,7 @@ public class UploadFileServiceImpl implements UploadFileService {
 		for (Fabricacion fabricacion : list) {
 			fabricacionDao.save(fabricacion);
 		}
+		return list.size();
 	}
 
 	@Override

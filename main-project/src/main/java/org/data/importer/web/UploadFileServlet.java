@@ -50,11 +50,18 @@ public class UploadFileServlet extends HttpServlet {
 
 		LOG.info("upload file " + filePart);
 
-		uploadFileService.upload(input);
+		int tolalUploadedRows = uploadFileService.upload(input);
 
 		List<Fabricacion> list = uploadFileService.findAll();
 
+		int totalRows = list.size();
+
 		req.setAttribute("list", list);
+		LOG.info("totalRows: {}", totalRows);
+		LOG.info("tolalUploadedRows: {}", tolalUploadedRows);
+
+		req.setAttribute("totalRows", list.size());
+		req.setAttribute("tolalUploadedRows", tolalUploadedRows);
 
 		req.getRequestDispatcher("result.jsp").forward(req, resp);
 

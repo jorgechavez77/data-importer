@@ -7,7 +7,7 @@ import org.data.importer.entity.Fabricacion;
 
 public interface UploadFileService {
 
-	void upload(InputStream input);
+	int upload(InputStream input);
 
 	List<Fabricacion> findAll();
 	

@@ -8,8 +8,14 @@
 <title>Spreadsheet result</title>
 </head>
 <body>
+	<p>There have been uploaded ${tolalUploadedRows} rows, in total there are ${totalRows} rows.<p>
 
-	<table>
+	<form action="uploadFile" method="post" enctype="multipart/form-data">
+		<input type="file" name="file">
+		<input type="submit" value="Upload">
+	</form>
+<br/>
+	<table border="1">
 		<thead>
 			<tr>
 				<td>Numero de Serie</td>
