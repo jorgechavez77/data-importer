@@ -30,4 +30,9 @@ public class UploadFileServiceImpl implements UploadFileService {
 		}
 	}
 
+	@Override
+	public List<Fabricacion> findAll() {
+		return fabricacionDao.findAll();
+	}
+
 }

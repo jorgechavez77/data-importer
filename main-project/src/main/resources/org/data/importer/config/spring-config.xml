@@ -14,7 +14,7 @@ http://www.springframework.org/schema/context
 
 	<bean id="jdbcPropertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-		p:location="classpath:database.properties" />
+		p:location="classpath:/org/data/importer/config/database.properties" />
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"

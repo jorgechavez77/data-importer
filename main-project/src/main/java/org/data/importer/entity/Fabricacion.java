@@ -8,8 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name = "fabricacion")
-// @Table(name = "fabricacion")
+@Entity
 public class Fabricacion implements Serializable {
 
 	private static final long serialVersionUID = 1L;
